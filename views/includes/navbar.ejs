@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top"> 
+  <div class="container-fluid">
+    <!-- Left: Logo -->
+    <a href="/listings" class="navbar-brand">
+      <i class="fa-solid fa-compass"></i>
+    </a>
+
+    <!-- Toggler for small screens -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Center: Search Bar -->
+    <form class="d-none d-md-flex mx-auto" role="search" style="width: 40%;">
+      <input class="form-control me-2" type="search" placeholder="Search listings..." aria-label="Search">
+      <button class="btn btn-outline-secondary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+
+    <!-- Collapsible Left Nav (Explore) -->
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link d-md-none" href="/listings">Explore</a> <!-- Only shows on small screens -->
+      </div>
+    </div>
+
+    <!-- Right: Links -->
+    <div class="navbar-nav ms-auto">
+      <a class="nav-link" href="/listings/new">Airbnb Your Home</a>
+
+      <% if (!currUser) { %>
+        <a class="nav-link" href="/signup"><b>Sign up</b></a>
+        <a class="nav-link" href="/login"><b>Log in</b></a>
+      <% } %>
+      <% if (currUser) { %>
+        <a class="nav-link" href="/logout"><b>Log out</b></a>
+      <% } %>
+    </div>
+  </div>
+</nav>
